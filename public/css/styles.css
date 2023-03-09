@@ -33,3 +33,31 @@
 	font-size: 12px;
   color: #fff;
 }
+
+
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+
+.textarea {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.label1 {
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: rgb(105, 105, 105);
+
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: #1abc9c;
+    border: none;
+}
