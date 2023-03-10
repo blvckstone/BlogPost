@@ -4,9 +4,15 @@
 
 <% for(let i=0; i<messageArray.length; i++){ %>
 
+    
+
+    <% let showTitle = titleArray[i] %>
+    
+    <h2> <%= showTitle %> </h2>
+    
    <%  let showMessage = messageArray[i] %>
 
-   <p> <%= showMessage %> </p>
+   <p class="content"> <%= showMessage %> </p>
 
 <% } %>
 
@@ -14,13 +20,21 @@
 
 
 
+
+
+
+
 <div class="form-group shadow-textarea textarea">
 <form method="POST" action="/compose">
-    <label class="label1" for="exampleFormControlTextarea6">POST</label>
+    <label class="label1" for="exampleFormControlTextarea6">Compose</label>
+    <input class="form-control title z-depth-1" name="title" id="exampleFormControlTextarea6" rows="1" placeholder="Write title here...">
     <textarea class="form-control z-depth-1" name="message" id="exampleFormControlTextarea6" rows="6" placeholder="Write post here..."></textarea>
     <button class="btn btn-primary" type="submit">compose</button>
 </form>
 </div>
+
+
+
 
 
 
