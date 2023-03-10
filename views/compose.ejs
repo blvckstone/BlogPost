@@ -2,15 +2,15 @@
 
 
 
-<% for(let i=0; i<messageArray.length; i++){ %>
+<% for(let i=0; i<postArray.length; i++){ %>
 
     
 
-    <% let showTitle = titleArray[i] %>
+    <% let showTitle = postArray[i].title %>
     
     <h2> <%= showTitle %> </h2>
     
-   <%  let showMessage = messageArray[i] %>
+   <%  let showMessage = postArray[i].message %>
 
    <p class="content"> <%= showMessage %> </p>
 
