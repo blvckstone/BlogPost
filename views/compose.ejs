@@ -1,13 +1,25 @@
-<%- include("header") %>
+<%- include("partials/header") %>
+
+
+
+<% for(let i=0; i<messageArray.length; i++){ %>
+
+   <%  let showMessage = messageArray[i] %>
+
+   <p> <%= showMessage %> </p>
+
+<% } %>
 
 
 
 
 
 <div class="form-group shadow-textarea textarea">
+<form method="POST" action="/compose">
     <label class="label1" for="exampleFormControlTextarea6">POST</label>
-    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="6" placeholder="Write post here..."></textarea>
-    <button class="btn btn-primary">compose</button>
+    <textarea class="form-control z-depth-1" name="message" id="exampleFormControlTextarea6" rows="6" placeholder="Write post here..."></textarea>
+    <button class="btn btn-primary" type="submit">compose</button>
+</form>
 </div>
 
 
@@ -20,4 +32,4 @@
 
 
 
-<%- include("footer") %>
+<%- include("partials/footer") %>
