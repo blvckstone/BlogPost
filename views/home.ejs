@@ -2,7 +2,19 @@
 
 
 <h2>Home</h2>
-<p><%= homeShow %></p>
+<% for(let i=0; i<postArray.length; i++){ %>
+
+    
+
+    <% let showTitle = postArray[i].title %>
+    
+    <h2> <%= showTitle %> </h2>
+    
+   <%  let showMessage = postArray[i].message %>
+
+   <p class="content"> <%= showMessage %> </p>
+
+<% } %>
 
 
 
