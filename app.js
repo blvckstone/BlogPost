@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const _ = require("lodash");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 const ejs = require("ejs");
@@ -22,7 +23,7 @@ app.use(express.static("public"));
 
 
 app.get("/", function (req, res) {
-  res.render("home", { homeShow: homeStartingContent, postArray: postArray });
+  res.render("home", { homeShow: homeStartingContent, postArray: postArray, });
 });
 
 app.get("/about", function (req, res) {
@@ -37,19 +38,25 @@ app.get("/contact", function (req, res) {
 
 app.get("/posts/:topic", function(req, res){
   let topic = (req.params.topic);
+  let lowCase = _.lowerCase(topic)
   
   
 
 
-  console.log(topic)
+  // console.log(topic)
 
   postArray.forEach(function(arrayItems){
-    console.log(arrayItems.title)
-    if(arrayItems.title == topic){
+    title = arrayItems.title
+
+    if(_.lowerCase(title) == lowCase){
+      // res.redirect("/post")
 
       console.log("Match Found");
-    }else {
-      console.log("Match Not Found")
+      // app.get("/post", function(req, res){
+        res.render("post", {showtitle: arrayItems.title, showcontent: arrayItems.message} )
+      // })
+
+
     }
   })
 })

@@ -8,11 +8,16 @@
 
     <% let showTitle = postArray[i].title %>
     
-    <h2> <%= showTitle %> </h2>
+    <h2 class="showtitle"> <%= showTitle %> </h2>
+
+    
     
    <%  let showMessage = postArray[i].message %>
 
-   <p class="content"> <%= showMessage %> </p>
+   <p class="content"> <%= showMessage.substring(0, 100) + " ..." %> 
+   <a href="/posts/<%= showTitle %>">Read More</a>
+   </p>
+  
 
 <% } %>
 
